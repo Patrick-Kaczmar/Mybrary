@@ -1,5 +1,5 @@
 if(process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
+    require('dotenv').config({ path: '.env'});
 }
 
 const express = require("express");
@@ -21,4 +21,4 @@ db.once('open', () => console.log('connected to database!'));
 
 app.use('/', indexRouter);
 
-app.listen(process.env.Port || 3000);
+app.listen(process.env.PORT || 3000);
